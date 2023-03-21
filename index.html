@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="Imagen/GRicon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <div class="contenedorGeneral">
+
+        <div class="contenedorDatos">
+            <div id="fecha">martes 21/03/2023 16:12pm</div>
+            <h1>Lista de tareas</h1>
+        </div>
+
+        <div class="contenedorAgregarTarea">
+            <input type="text" id="input" placeholder="Escribe tu tarea">
+            <button id="botonAgregar">+</button>
+        </div>
+
+        <div class="contenedorListaDeTareas">
+            <h2>Tareas a realizar</h2>
+            <ul id="lista">
+                <li>
+                    <input type="checkbox" data="realizado" id="checkbox">
+                    <p class="texto">Cortar el pasto</p>
+                    <button data="eliminado" id="botonEliminar">x</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
