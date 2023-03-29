@@ -32,6 +32,7 @@ botonAgregar.addEventListener("click", () => {
 
 
 
+
 // addEventListener() Registra un evento a un objeto en específico. El Objeto especifico (en-US) puede ser un simple elemento en un archivo, el mismo documento , una ventana o un XMLHttpRequest.
 // keyup El evento es iniciado cuando la tecla es soltada.
 document.addEventListener('keyup', function(event){
