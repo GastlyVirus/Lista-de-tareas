@@ -3,7 +3,7 @@ const fecha = document.getElementById("fecha");
 const input = document.getElementById("input");
 const botonAgregar = document.getElementById("botonAgregar");
 const lista = document.getElementById("lista");
-
+//-----------------------------------------------------------
 
 
 // Funcion para formar la lista de tareas, una debajo de la otra
@@ -17,7 +17,7 @@ function agregarTarea(tarea) {
 // 'beforeend': Justo dentro del elemento, después de su último elemento hijo.
   lista.insertAdjacentHTML("beforeend", elemento);
 }
- 
+//-----------------------------------------------------------
 
 
 // addEventListener() Registra un evento a un objeto en específico. El Objeto especifico (en-US) puede ser un simple elemento en un archivo, el mismo documento , una ventana o un XMLHttpRequest.
@@ -29,7 +29,7 @@ botonAgregar.addEventListener("click", () => {
   }
   input.value = "";
 });
-
+//-----------------------------------------------------------
 
 
 
@@ -45,3 +45,4 @@ document.addEventListener('keyup', function(event){
         input.value = "";
     }
 })
+//-----------------------------------------------------------
