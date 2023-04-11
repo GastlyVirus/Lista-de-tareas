@@ -2,5 +2,10 @@
   margin: 0;
   padding: 0;
   background: white;
-  font-family: 'Raleway';
+  font-family: "Raleway";
+}
+
+.tachado {
+  text-decoration: line-through;
+  color: green;
 }
