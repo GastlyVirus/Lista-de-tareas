@@ -5,7 +5,7 @@
   font-family: "Raleway";
 }
 
-.tachado {
+.lineThrough {
   text-decoration: line-through;
   color: green;
 }
