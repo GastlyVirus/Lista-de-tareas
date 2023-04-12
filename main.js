@@ -5,13 +5,13 @@ const lista = document.getElementById("lista");
 const check = "check";
 const uncheck = "uncheck";
 const lineThrough = "lineThrough";
-let id = 0;
-const LIST = []
+let id
+let LIST
 
 
 
-const FECHA = new DataTransfer;
-fecha.innerHTML = FECHA.toLocaleDateString('es-AR', {weekday: 'long', month: 'short', day: 'numeric'});
+// const FECHA = new Date();
+// fecha.innerHTML = FECHA.toLocaleDateString('es-AR', {weekday:'long', month:'long', day:'numeric'});
 
 
 
@@ -54,8 +54,9 @@ botonAgregar.addEventListener("click", ()=>{
       id: id,
       realizado: false,
       eliminado: false,
-    })
+    }) 
   }
+  localStorage.setItem('TODOLIST', JSON.stringify(LIST))
   input.value = "";
   id++;
 });
@@ -74,6 +75,7 @@ document.addEventListener("keyup", function(event){
         eliminado: false,
       })
     }
+    localStorage.setItem('TODOLIST', JSON.stringify(LIST))
     input.value = "";
     id++;
   }
@@ -89,4 +91,25 @@ lista.addEventListener("click", function(event){
   } else if (elementData === "eliminado"){
     tareaEliminada(element);
   }
+  localStorage.setItem('TODOLIST', JSON.stringify(LIST))
 });
+
+
+
+let data = localStorage.getItem('TODOLIST')
+if (data){
+  LIST.JSON.parse(data)
+  id = LIST.length
+  cargarLista(LIST)
+}else{
+  LIST = []
+  id = 0
+}
+
+
+
+function cargarLista(DATA){
+  DATA.forEach(function(i){
+    agregarTarea(i.nombre, i.id, i.realizado, i.eliminado)
+  })
+}
