@@ -2,29 +2,52 @@ const fecha = document.getElementById("fecha");
 const input = document.getElementById("input");
 const botonAgregar = document.getElementById("botonAgregar");
 const lista = document.getElementById("lista");
+const check = "check";
+const uncheck = "uncheck";
+const lineThrough = "lineThrough";
+let id = 0;
 
+function agregarTarea(tarea, id, realizado, eliminado) {
+  if (eliminado) {
+    return;
+  }
 
-function agregarTarea (tarea){
+  const REALIZADO = realizado ? check : uncheck;
+
+  const LINE = realizado ? lineThrough : " ";
+
   const elemento = `<li id="elemento">
-  <input type="checkbox" data="realizado" id="0"></i>
-  <p class="text">${tarea}</p>
-  <button data="eliminado" id="0">x</button>
-  </li>`
+  <input class="${REALIZADO}" type="checkbox" data="realizado" id="${id}"></i>
+  <p class="${LINE}">${tarea}</p>
+  <button data="eliminado" id="${id}">x</button>
+  </li>`;
 
-  lista.insertAdjacentHTML("beforeend", elemento)
+  lista.insertAdjacentHTML("beforeend", elemento);
 }
 
-botonAgregar.addEventListener('click', ()=>{
-  const tarea = input.value; 
-  if(tarea){
-    agregarTarea(tarea);
+botonAgregar.addEventListener("click", () => {
+  const tarea = input.value;
+  if (tarea) {
+    agregarTarea(tarea, id, false, false);
   }
   input.value = " ";
-})
+  id++;
+});
 
-document.addEventListener('keyup', function(event){
-  if(event.key == 'Enter'){
+document.addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
     const tarea = input.value;
-    if 
+    if (tarea) {
+      agregarTarea(tarea, id, false, false);
+    }
+    input.value = "";
+    id++;
   }
+});
+
+lista.addEventListener('click', function(event){
+  const element = event.target
+  const elementData = element.attributes.data.value
+  console.log(element);
+  console.log(elementData);
 })
