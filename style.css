@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Raleway";
+  box-sizing: border-box;
 }
 
 body {
@@ -11,18 +12,14 @@ body {
   background-attachment: fixed;
 }
 
-.contenedorDatos {
+.contenedorGeneral {
   width: 500px;
+  margin: 0 auto;
+}
+
+.contenedorDatos {
   height: 50px;
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
 }
 
 #fecha, #hora {
@@ -30,27 +27,18 @@ body {
 }
 
 h1 {
-  width: 500px;
   height: 50px;
-  position: absolute;
-  top: 14%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
 }
 
 .contenedorAgregarTarea {
   display: flex;
   width: 500px;
   height: 50px;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 #input {
@@ -67,35 +55,17 @@ h1 {
 }
 
 h3 {
-  position: absolute;
   width: 500px;
   height: 50px;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
 }
 
 .contenedorListaDeTareas {
-  width: 500px;
   height: auto;
-  position: absolute;
-  top: 36%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.contenedorListaDeTareas li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 5px 0;
-  backdrop-filter: blur(50px);
 }
 
 .lineThrough {
