@@ -1,17 +1,43 @@
 const fecha = document.getElementById("fecha");
+const horaElemento = document.getElementById("hora");
 const input = document.getElementById("input");
 const botonAgregar = document.getElementById("botonAgregar");
 const lista = document.getElementById("lista");
 const check = "check";
 const uncheck = "uncheck";
 const lineThrough = "lineThrough";
+let LIST = [];
 let id
-let LIST
 
 
 
-// const FECHA = new Date();
-// fecha.innerHTML = FECHA.toLocaleDateString('es-AR', {weekday:'long', month:'long', day:'numeric'});
+const FECHA = new Date();
+fecha.innerHTML = FECHA.toLocaleDateString('es-AR', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+
+
+
+// Función para obtener el formato de la hora con ceros a la izquierda
+const obtenerFormatoHora = (numero) => {
+  return numero < 10 ? "0" + numero : numero;
+};
+// Función para obtener el formato de las am o pm
+const obtenerFormatoAMPM = (hora) => {
+  return hora >= 12 ? "pm" : "am";
+};
+// Función para mostrar la hora en tiempo real
+const mostrarHoraEnTiempoReal = () => {
+  const fecha = new Date();
+  let horas = fecha.getHours();
+  const minutos = obtenerFormatoHora(fecha.getMinutes());
+  const segundos = obtenerFormatoHora(fecha.getSeconds());
+  const ampm = obtenerFormatoAMPM(horas);
+  // Obtén la hora en formato de 12 horas
+  horas = horas % 12 || 12;
+  // Actualiza el contenido del elemento div con la hora en tiempo real
+  horaElemento.textContent = `${horas}:${minutos}:${segundos} ${ampm}`;
+};
+// Llama a la función mostrarHoraEnTiempoReal cada segundo (1000 ms)
+setInterval(mostrarHoraEnTiempoReal, 1000);
 
 
 

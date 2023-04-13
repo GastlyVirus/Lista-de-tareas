@@ -1,8 +1,14 @@
 * {
   margin: 0;
   padding: 0;
-  background: white;
   font-family: "Raleway";
+}
+
+body {
+  background-image: url("Imagen/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .lineThrough {
