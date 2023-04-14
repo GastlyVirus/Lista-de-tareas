@@ -127,3 +127,30 @@ footer {
   width: 30px;
   margin-bottom: 10px;
 }
+
+@media screen and (max-width: 530px){
+  .contenedorGeneral {
+    width: 350px;
+    backdrop-filter: blur(100px);
+  }
+
+  .contenedorAgregarTarea {
+    width: 350px;
+  }
+
+  h3 {
+    width: 350px;    
+  }
+
+  #elemento > .checkIcon {
+    width: 20px;
+  }
+
+  #elemento > .trashIcon {
+    width: 20px;
+  }
+
+  .socialMedia {
+    width: 25px;
+  }
+}
