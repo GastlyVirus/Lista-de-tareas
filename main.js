@@ -48,14 +48,15 @@ function agregarTarea(tarea, id, realizado, eliminado){
   const REALIZADO = realizado ? check : uncheck;
   const LINE = realizado ? lineThrough : " ";
   const elemento = `<li id="elemento">
-  <input class="${REALIZADO}" type="checkbox" data="realizado" id="${id}">
+  <img src="Imagen/checkIcon.png" class="checkIcon ${REALIZADO}" type="checkbox" data="realizado" id="${id}"/>
   <p class="text ${LINE}">${tarea}</p>
-  <button data="eliminado" id="${id}">x</button>
+  <img class="trashIcon" src="Imagen/trashIcon.png" data="eliminado" id="${id}"/>
   </li>`;
   lista.insertAdjacentHTML("beforeend", elemento); //insertará el contenido HTML (elemento) al final de la lista (lista) utilizando el método insertAdjacentHTML() con la posición "beforeend"
 }
 
-
+// <button data="eliminado" id="${id}">x</button>
+// <input class="${REALIZADO}" type="checkbox" data="realizado" id="${id}">
 
 function tareaRealizada(element){
   element.classList.toggle(check);

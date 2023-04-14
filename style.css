@@ -84,37 +84,31 @@ h3 {
   align-items: center;
 }
 
-#elemento > input {
-  appearance: none;
-  width: 15px;
-  height: 15px;
+#elemento > .checkIcon {
+  width: 25px;
   margin-left: 10px;
   cursor: pointer;
-  background-color: white;
 }
 
-#elemento > input:hover {
+#elemento > .checkIcon:hover{
   background-color: rgb(0, 255, 0);
+  border-radius: 50%;
 }
 
-#elemento > input:checked {
+#elemento > .check{
   background-color: rgb(0, 255, 0);
+  border-radius: 50%
 }
 
-#elemento > button {
-  width: 20px;
-  height: 15px;
+#elemento > .trashIcon {
+  width: 25px;
   margin-right: 10px;
-  font-size: 15px;
   cursor: pointer;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-#elemento > button:hover {
+#elemento > .trashIcon:hover{
   background-color: red;
+  border-radius: 25%;
 }
 
 .lineThrough {
