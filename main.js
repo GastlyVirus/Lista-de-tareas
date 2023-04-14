@@ -10,7 +10,7 @@ let LIST
 let id
 
 
-
+// La función obtiene la fecha y hora actual del sistema en formato localizado en español de Argentina y lo establece como contenido HTML de un elemento en el documento HTML. El resultado será una representación formateada de la fecha en el formato especificado.
 const FECHA = new Date();
 fecha.innerHTML = FECHA.toLocaleDateString('es-AR', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
 
@@ -55,8 +55,7 @@ function agregarTarea(tarea, id, realizado, eliminado){
   lista.insertAdjacentHTML("beforeend", elemento); //insertará el contenido HTML (elemento) al final de la lista (lista) utilizando el método insertAdjacentHTML() con la posición "beforeend"
 }
 
-// <button data="eliminado" id="${id}">x</button>
-// <input class="${REALIZADO}" type="checkbox" data="realizado" id="${id}">
+
 
 function tareaRealizada(element){
   element.classList.toggle(check);
